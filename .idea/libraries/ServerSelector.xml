@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="ServerSelector">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../ServerSelector/out/artifacts/ServerSelector_jar/ServerSelector.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

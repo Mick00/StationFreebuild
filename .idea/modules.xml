@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../Cosmovotes/Cosmovotes.iml" filepath="$PROJECT_DIR$/../Cosmovotes/Cosmovotes.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../HorsinAround/HorsinAround.iml" filepath="$PROJECT_DIR$/../HorsinAround/HorsinAround.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../PlanetSelector/PlanetSelector.iml" filepath="$PROJECT_DIR$/../PlanetSelector/PlanetSelector.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Scoreboard/Scoreboard.iml" filepath="$PROJECT_DIR$/../Scoreboard/Scoreboard.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../ServerStyle/ServerStyle.iml" filepath="$PROJECT_DIR$/../ServerStyle/ServerStyle.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../StationAPI/StationAPI.iml" filepath="$PROJECT_DIR$/../StationAPI/StationAPI.iml" />
+      <module fileurl="file://$PROJECT_DIR$/StationFreebuild.iml" filepath="$PROJECT_DIR$/StationFreebuild.iml" />
+    </modules>
+  </component>
+</project>

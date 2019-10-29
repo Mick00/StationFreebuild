@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="InventoryAPI:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/InventoryAPI_jar</output-path>
+    <root id="archive" name="InventoryAPI.jar">
+      <element id="module-output" name="InventoryAPI" />
+      <element id="dir-copy" path="$PROJECT_DIR$/../../api/Mc/Spigot-API" />
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="RewardVote">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../RewardVote/out/artifacts/RewardVote_jar/RewardVote.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

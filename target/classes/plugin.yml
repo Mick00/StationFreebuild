@@ -1,0 +1,24 @@
+name: StationFreebuild
+version: 0.1
+api-version: 1.14
+author: Tabaribou
+main: fr.station47.stationFreebuild.StationFreebuild
+depend: [StationAPI,Theme]
+commands:
+  cadeau:
+    description: Recevez un cadeau tous les 24 heures
+    usage: /cadeau
+  worldregen:
+    aliases: [wr,regen]
+    description: Regen des mondes
+    usage: /wr
+  chatman:
+    description: gerer le chat
+    usage: /chatman
+  boost:
+    description: Booster
+    aliases: [booster]
+    usage: /boost
+  metier:
+    description: Affiche le menu des metiers
+    usage: /metier

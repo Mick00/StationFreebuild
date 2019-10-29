@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="jar" build-on-make="true" name="Cosmovotes:jar">
-    <output-path>$PROJECT_DIR$/out/artifacts/Cosmovotes_jar</output-path>
-    <root id="archive" name="Cosmovotes.jar">
-      <element id="module-output" name="Cosmovotes" />
-    </root>
-  </artifact>
-</component>

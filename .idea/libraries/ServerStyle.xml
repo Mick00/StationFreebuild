@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="ServerStyle">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/../ServerStyle/out/artifacts/Theme_jar/ServerStyle.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>

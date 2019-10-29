@@ -145,7 +145,7 @@
         <repository>
             <id>github</id>
             <name>GitHub Mick00 Apache Maven Packages</name>
-            <url>https://maven.pkg.github.com/Mick00/StationApi</url>
+            <url>https://maven.pkg.github.com/Mick00/StationFreebuild</url>
         </repository>
     </distributionManagement>
 </project>

@@ -131,7 +131,7 @@ public class WorldRegen extends MainCommand implements Module{
         configObject.put("worldRegen.lastRegen."+worldName, 0);
         configObject.loadFrom(StationFreebuild.configs.getConfig("config"));
 
-        return System.currentTimeMillis() - Long.valueOf(String.valueOf(configObject.getMap().get("worldRegen.lastRegen."+worldName)));
+        return System.currentTimeMillis() - Long.parseLong(String.valueOf(configObject.getMap().get("worldRegen.lastRegen."+worldName)));
     }
 
     private boolean regenWorld(String worldName, boolean updateLastRegen){
@@ -205,13 +205,6 @@ public class WorldRegen extends MainCommand implements Module{
         } catch (IOException ex){
             Bukkit.getLogger().severe(ex.getMessage());
         }
-//        try {
-//            EditSession es = new EditSession(new BukkitWorld(world), 999999999);
-//            CuboidClipboard cc = CuboidClipboard.loadSchematic(file);
-//            cc.paste(es, new Vector(x, y, z), !air);
-//        } catch (IOException | MaxChangedBlocksException | DataException e) {
-//            e.printStackTrace();
-//        }
     }
 
     @Override

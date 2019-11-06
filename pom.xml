@@ -37,6 +37,7 @@
             <id>elmakers-repo</id>
             <url>http://maven.elmakers.com/repository/ </url>
         </repository>
+        <!--World Edit repo -->
         <repository>
             <id>sk89q-repo</id>
             <url>http://maven.sk89q.com/repo/</url>

@@ -26,15 +26,19 @@ public class StationFreebuild extends JavaPlugin{
         new WorldRegen("worldregen");
         boostManager = new BoostManager();
 
-
         AutoBroadcast ab = new AutoBroadcast();
         ab.startBroadcast();
 
         ChatManager chatManager = new ChatManager();
         Bukkit.getServer().getPluginManager().registerEvents(chatManager,this);
         getCommand("chatman").setExecutor(chatManager);
-        StationAPI.shopManager.registerShop("merlin", p->p.performCommand("ce"));
-        StationAPI.shopManager.registerShop("encanteur", p->p.performCommand("ah"));
+
+        if (StationAPI.isShopManagerActive()){
+            StationAPI.shopManager.registerShop("merlin", p->p.performCommand("ce"));
+            StationAPI.shopManager.registerShop("encanteur", p->p.performCommand("ah"));
+        } else {
+            Bukkit.getLogger().warning("Shop manager is not active. Merlin and Encanteur cannot be registered.");
+        }
 
         this.getServer().getPluginManager().registerEvents(new MoreJobs(),this);
         this.getServer().getPluginManager().registerEvents(new NewAuctionBroadcast(), this);

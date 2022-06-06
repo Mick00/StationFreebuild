@@ -12,6 +12,7 @@ import fr.station47.stationFreebuild.StationFreebuild;
 import fr.station47.stationFreebuild.jobsPlus.GUI.MainGUI;
 import fr.station47.stationFreebuild.jobsPlus.jobsShop.JobShop;
 import fr.station47.theme.Theme;
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
@@ -19,6 +20,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 
+import java.util.Arrays;
 import java.util.EventListener;
 import java.util.List;
 
@@ -35,7 +37,7 @@ public class MoreJobs extends MainCommand implements Listener {
         StationFreebuild.configs.loadOrDefault("config",config);
         MainGUI.load();
         shop = new JobShop();
-        addSubcommands(openShopCMD());
+        //addSubcommands(openShopCMD());
     }
 
     @EventHandler(priority = EventPriority.LOWEST)
@@ -54,7 +56,12 @@ public class MoreJobs extends MainCommand implements Listener {
     @Override
     protected boolean noArgs(CommandSender sender){
         if (sender instanceof Player){
-            new MainGUI().open((Player)sender);
+            Player player = ((Player) sender);
+            if (!Jobs.getGCManager().getConfig().getStringList("Optimizations.DisabledWorlds.List").contains(player.getWorld().getName())){
+                new MainGUI().open((Player)sender);
+            }else {
+                Theme.sendMessage(sender,"Vous ne pouvez ouvrir ce menu dans ce monde");
+            }
         }
         return true;
     }
@@ -64,7 +71,14 @@ public class MoreJobs extends MainCommand implements Listener {
             @Override
             public boolean executeCommand(CommandSender sender, String[] args) {
                 if (sender instanceof Player){
-                    openShop(((Player) sender));
+                    Player player = (Player) sender;
+                    if (!Jobs.getGCManager().getConfig().getStringList("Optimizations.DisabledWorlds.List").contains(player.getWorld().getName())) {
+                        openShop(player);
+                    } else {
+                        Theme.sendMessage(sender,"Vous ne pouvez ouvrir ce menu dans ce monde");
+                    }
+                } else {
+                    Theme.sendMessage(sender, "Seulement les joueurs peuvent utiliser cette commande");
                 }
                 return true;
             }

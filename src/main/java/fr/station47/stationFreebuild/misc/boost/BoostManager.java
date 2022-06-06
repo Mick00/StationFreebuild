@@ -17,6 +17,7 @@ public class BoostManager {
     public BoostManager(){
         boostQueue = new LinkedList<>();
         BoostCmd boostCmd = new BoostCmd("boost", StationFreebuild.instance, this);
+        new BoostPapiExpansion(this).register();
     }
 
     public void queueBoost(Boost boost){
@@ -30,14 +31,14 @@ public class BoostManager {
         Boost boost = boostQueue.peek();
         if (!boost.isDone() && !boost.isOngoing()) {
             if (boost.getType().equals(BoostType.EXP) || boost.getType().equals(BoostType.MONEY_AND_EXP)) {
-                Jobs.getJobs().forEach(j -> j.addBoost(CurrencyType.EXP, boost.getMultiplier()));
+                Jobs.getJobs().forEach(j -> j.addBoost(CurrencyType.EXP, boost.getMultiplier()-1));
             }
             if (boost.getType().equals(BoostType.MONEY) || boost.getType().equals(BoostType.MONEY_AND_EXP)) {
-                Jobs.getJobs().forEach(j -> j.addBoost(CurrencyType.MONEY, boost.getMultiplier()));
+                Jobs.getJobs().forEach(j -> j.addBoost(CurrencyType.MONEY, boost.getMultiplier()-1));
             }
             boost.start();
 
-            Theme.broadcast(ChatColor.YELLOW + boost.getPlayerName()+ ChatColor.RESET + " a déclenché un booster "+ ChatColor.AQUA+boost.getType().getName()+ChatColor.YELLOW+" x"+boost.getMultiplier());
+            Theme.broadcast(ChatColor.YELLOW + boost.getPlayerName() + ChatColor.RESET + " a déclenché un booster "+ ChatColor.AQUA+boost.getType().getName()+ChatColor.YELLOW+" x"+boost.getMultiplier());
 
             BukkitRunnable runnable = new BukkitRunnable() {
                 @Override
@@ -55,10 +56,10 @@ public class BoostManager {
         Boost boost = boostQueue.poll();
         boost.end();
         if (boost.getType().equals(BoostType.EXP) || boost.getType().equals(BoostType.MONEY_AND_EXP)){
-            Jobs.getJobs().forEach(j-> j.addBoost(CurrencyType.EXP, 1));
+            Jobs.getJobs().forEach(j-> j.addBoost(CurrencyType.EXP, 0));
         }
         if (boost.getType().equals(BoostType.MONEY) || boost.getType().equals(BoostType.MONEY_AND_EXP)){
-            Jobs.getJobs().forEach(j-> j.addBoost(CurrencyType.MONEY, 1));
+            Jobs.getJobs().forEach(j-> j.addBoost(CurrencyType.MONEY, 0));
         }
         Theme.broadcast("Le booster de "+boost.getPlayerName()+" vient de se terminer");
         if (!boostQueue.isEmpty()){

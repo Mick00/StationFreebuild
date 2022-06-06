@@ -1,6 +1,5 @@
 package fr.station47.stationFreebuild;
 
-import fr.station47.inventoryGuiApi.InventoryBuilder;
 import fr.station47.stationAPI.api.StationAPI;
 import fr.station47.stationAPI.api.config.ConfigHelper;
 import fr.station47.stationAPI.api.config.ConfigObject;
@@ -23,7 +22,6 @@ public class StationFreebuild extends JavaPlugin{
         instance = this;
         configs.loadOrDefault("config",new ConfigObject());
         new DailyGift("cadeau");
-        new WorldRegen("worldregen");
         boostManager = new BoostManager();
 
         AutoBroadcast ab = new AutoBroadcast();

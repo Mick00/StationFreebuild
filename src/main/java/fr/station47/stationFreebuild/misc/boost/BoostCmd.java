@@ -1,5 +1,7 @@
 package fr.station47.stationFreebuild.misc.boost;
 
+import com.gamingmesh.jobs.Jobs;
+import com.gamingmesh.jobs.container.CurrencyType;
 import fr.station47.stationAPI.api.Utils;
 import fr.station47.stationAPI.api.commands.MainCommand;
 import fr.station47.stationAPI.api.commands.SubCommand;
@@ -79,8 +81,18 @@ public class BoostCmd extends MainCommand{
                 return true;
             }
         };
-
         addSubcommands(next);
+
+        SubCommand debug = new SubCommand("debug","; Shows boost level from Jobs","boost.debug"){
+            @Override
+            public boolean executeCommand(CommandSender sender, String[] args) {
+                Jobs.getJobs().forEach(j->{
+                    sender.sendMessage(j.getName()+": money "+j.getBoost().get(CurrencyType.MONEY)+", exp: "+j.getBoost().get(CurrencyType.EXP));
+                });
+                return true;
+            }
+        };
+        addSubcommands(debug);
 
     }
 }

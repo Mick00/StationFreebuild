@@ -44,7 +44,7 @@ public class MainGUI {
     }
 
     public MainGUI(){
-        builder = new InventoryBuilder(18,config.getString("mainName"), StationFreebuild.instance);
+        builder = new InventoryBuilder(27,config.getString("mainName"), StationFreebuild.instance);
         builder/*.setInventoryItem(openShop(2))*/
                 .setInventoryItem(info(0))
                 .setInventoryItem(joinJob(3))
@@ -55,7 +55,7 @@ public class MainGUI {
 
     public void open(Player p){
         List<JobProgression> jobs = MoreJobs.wrap(p).getJobProgression();
-        for (int i = 0; i <= 8; i++){
+        for (int i = 0; i <= 17; i++){
             if ( i >= jobs.size()){
                 builder.setInventoryItem(new InventoryItem(9+i,"", Material.GLASS_PANE));
             } else {

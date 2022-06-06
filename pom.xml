@@ -6,14 +6,14 @@
 
     <groupId>net.station47.plugins</groupId>
     <artifactId>StationFreebuild</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.1-SNAPSHOT</version>
 
     <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.8</java.version>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
-        <!-- This adds the Spigot Maven repository to the build -->
     <repositories>
         <!-- This adds the Spigot Maven repository to the build -->
         <repository>
@@ -51,6 +51,10 @@
             <id>betonquest-repo</id>
             <url>https://betonquest.pl/mvn</url>
         </repository>
+        <repository>
+            <id>placeholderapi</id>
+            <url>https://repo.extendedclip.com/content/repositories/placeholderapi/</url>
+        </repository>
     </repositories>
 
     <dependencies>
@@ -86,7 +90,7 @@
         <dependency>
             <groupId>net.station47.plugins</groupId>
             <artifactId>station-api</artifactId>
-            <version>1.0-snapshot</version>
+            <version>1.0.2-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>com.sk89q.worldedit</groupId>
@@ -118,7 +122,13 @@
             <artifactId>Jobs</artifactId>
             <version>4.14.0</version>
             <scope>system</scope>
-            <systemPath>${basedir}/lib/Jobs-4.14.0.jar</systemPath>
+            <systemPath>${basedir}/lib/Jobs4.16.1.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>me.clip</groupId>
+            <artifactId>placeholderapi</artifactId>
+            <version>2.10.9</version>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
     <build>
@@ -136,6 +146,7 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>2.3.2</version>
                 <configuration>
+                    <encoding>UTF-8</encoding>
                     <source>1.8</source>
                     <target>1.8</target>
                 </configuration>

@@ -68,6 +68,10 @@ public class Boost {
         this.duration = duration;
     }
 
+    public long timeLeft(){
+        return startedAt+getDuration()-System.currentTimeMillis();
+    }
+
     public String serealize(){
         long timeleft = startedAt+duration-System.currentTimeMillis();
         return playerName+"|"+type.toString()+"|"+(timeleft<0?duration:timeleft)+"|"+multiplier;

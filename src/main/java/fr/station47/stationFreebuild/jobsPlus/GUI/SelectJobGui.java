@@ -22,7 +22,7 @@ import static com.gamingmesh.jobs.Jobs.getPlayerManager;
 
 public class SelectJobGui {
 
-    private InventoryBuilder inv = new InventoryBuilder(9,"Choississez un job", StationFreebuild.instance);
+    private InventoryBuilder inv = new InventoryBuilder(18,"Choississez un job", StationFreebuild.instance);
     private Player p;
     private boolean confirm = false;
 

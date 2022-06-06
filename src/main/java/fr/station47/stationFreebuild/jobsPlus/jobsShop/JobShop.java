@@ -31,7 +31,9 @@ public class JobShop implements GUI {
         config.put("reqLabel", "Métier: {0}\nNiv. requis: {1}");
         config.put("reqNotMet", "Vous devez être niveau {0} {1} minimum pour acheter cet item.");
         StationFreebuild.configs.loadOrDefault("jobsgui",config);
-        StationAPI.shopManager.registerShop(config.getString("pnjName"), this);
+        if (StationAPI.isShopManagerActive()){
+            StationAPI.shopManager.registerShop(config.getString("pnjName"), this);
+        }
         items = new ArrayList<>();
         ItemStack unbreakableHoe = new ItemStack(Material.GOLDEN_HOE);
         ItemMeta meta = unbreakableHoe.getItemMeta();
